@@ -20,7 +20,7 @@ abstract class Worker extends PersonPolyclinic {
 
     //-----------------------------------------------------------------------------------------------------------------
 
-    public Worker() {
+    public Worker()  {
         SetFio("-");
         SetPol("-");
         SetAge(0);

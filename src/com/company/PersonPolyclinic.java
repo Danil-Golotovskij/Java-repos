@@ -1,7 +1,9 @@
 package com.company;
 import java.util.Scanner;
 
+
 abstract class PersonPolyclinic {
+    Scanner in = new Scanner(System.in);
     private String fio; // ФИО
     private int age; // возраст
     private String pol; // пол
