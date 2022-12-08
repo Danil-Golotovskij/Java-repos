@@ -2,8 +2,11 @@ package com.company;
 import java.util.Scanner;
 
 class MedicalStaff extends Worker {
-    private String education;
-    private boolean student;
+    private String education; // образование
+    private boolean student; // является студентом
+
+    public boolean proverk = true; // занесен ли в счетчик
+
 
     public MedicalStaff(){
         SetFio("-");
@@ -14,6 +17,8 @@ class MedicalStaff extends Worker {
         SetWorkExperience(0);
         education = "-";
         student = false;
+        Counter(proverk);
+        proverk = false;
     }
 
     public MedicalStaff(String education) {
@@ -25,13 +30,19 @@ class MedicalStaff extends Worker {
         SetWorkExperience(0);
         this.education = education;
         student = false;
+        Counter(proverk);
+        proverk = false;
     }
 
     public MedicalStaff(String fio, int age, String pol, int numberWorker, int salary, int workExperience, String education, boolean student) {
         super(fio, age, pol, numberWorker, salary, workExperience);
         this.education = education;
         this.student = student;
+        Counter(proverk);
+        proverk = false;
     }
+
+    //-----------------------------------------------------------------------------------------------------------------
 
     void Find(int a, int b) {
         if (GetAge() >= a && GetAge() <= b) {
@@ -39,45 +50,51 @@ class MedicalStaff extends Worker {
         }
     }
 
+    //-----------------------------------------------------------------------------------------------------------------
+
     public void Read() {
         Scanner in = new Scanner(System.in);
-        System.out.print("Input FIO: ");
+        System.out.print("Введите ФИО: ");
         String fio = in.nextLine();
         SetFio(fio);
-        System.out.print("Input pol: ");
+        System.out.print("Введите пол: ");
         String pol = in.nextLine();
         SetPol(pol);
-        System.out.print("Input education: ");
+        System.out.print("Введите образование: ");
         String educ = in.nextLine();
         SetEducation(educ);
-        System.out.print("Input age: ");
+        System.out.print("Введите возраст: ");
         SetAge(in.nextInt());
-        System.out.print("Input salary: ");
+        System.out.print("Введите зарплату: ");
         SetSalary(in.nextInt());
-        System.out.print("Input work experience: ");
+        System.out.print("Введите стаж: ");
         SetWorkExperience(in.nextInt());
-        System.out.print("Input student: ");
+        System.out.print("Является ли студентом (True или False): ");
         SetStudent(in.nextBoolean());
+        Counter(proverk);
+        proverk = false;
     }
 
     public void Display() {
-        System.out.print("FIO: ");
+        System.out.print("ФИО: ");
         System.out.println(GetFio());
-        System.out.print("Pol: ");
+        System.out.print("Пол: ");
         System.out.println(GetPol());
-        System.out.print("Age: ");
+        System.out.print("Востраст: ");
         System.out.println(GetAge());
-        System.out.print("Number worker: ");
+        System.out.print("Номер работника: ");
         System.out.println(GetNumberWorker());
-        System.out.print("Salary: ");
+        System.out.print("Зарплата: ");
         System.out.println(GetSalary());
-        System.out.print("Work experience: ");
+        System.out.print("Стаж: ");
         System.out.println(GetWorkExperience());
-        System.out.print("Education: ");
+        System.out.print("Образование: ");
         System.out.println(GetEducation());
-        System.out.print("To be student: ");
+        System.out.print("Является ли студентом: ");
         System.out.println(GetStudent());
     }
+
+    //-----------------------------------------------------------------------------------------------------------------
 
     public String GetEducation() {
         return education;

@@ -2,9 +2,9 @@ package com.company;
 import java.util.Scanner;
 
 abstract class PersonPolyclinic {
-    private String fio;
-    private int age;
-    private String pol;
+    private String fio; // ФИО
+    private int age; // возраст
+    private String pol; // пол
 
     public PersonPolyclinic() {
         fio = "-";
@@ -23,6 +23,8 @@ abstract class PersonPolyclinic {
         this.age = age;
         this.pol = pol;
     }
+
+    //-----------------------------------------------------------------------------------------------------------------
 
     public String GetFio() {
         return fio;

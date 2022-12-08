@@ -2,9 +2,23 @@ package com.company;
 import java.util.Scanner;
 
 abstract class Worker extends PersonPolyclinic {
-    private int numberWorker;
-    private int salary;
-    private int workExperience;
+    private int numberWorker; // номер работника
+    private int salary; // зарплата
+    private int workExperience; // стаж
+
+
+    public static int counter=0;   // кол-во работников в больнице
+    public static void Counter(boolean proverk){ // метод занесения в счетчик
+        if (proverk == true) {
+            counter++;
+        }
+    }
+    public static void CounterPrint(){
+        System.out.printf("Кол-во работников");
+        System.out.println(counter);
+    }
+
+    //-----------------------------------------------------------------------------------------------------------------
 
     public Worker() {
         SetFio("-");
@@ -30,6 +44,8 @@ abstract class Worker extends PersonPolyclinic {
         this.salary = salary;
         this.workExperience = workExperience;
     }
+
+    //-----------------------------------------------------------------------------------------------------------------
 
     public int GetNumberWorker() {
         return numberWorker;
