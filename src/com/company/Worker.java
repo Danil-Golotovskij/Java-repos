@@ -14,7 +14,7 @@ abstract class Worker extends PersonPolyclinic {
         }
     }
     public static void CounterPrint(){
-        System.out.printf("Кол-во работников");
+        System.out.printf("Кол-во работников: ");
         System.out.println(counter);
     }
 

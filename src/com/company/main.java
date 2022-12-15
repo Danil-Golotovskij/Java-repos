@@ -5,15 +5,9 @@ public class main {
     public static void main(String[] args) throws CounterException {
         Scanner in = new Scanner(System.in);
 
-        Patient d = new Patient();
-
-        try {
-            d.Read();
-        } catch (AnalisiException e) {
-            throw new RuntimeException(e);
-        }
-
-        d.Display();
-
+        Doctor d = new Doctor();
+        d.SetSalary(230);
+        System.out.print("Зарплата за 3 месяца: ");
+        System.out.println(d.Salary3());
     }
 }
