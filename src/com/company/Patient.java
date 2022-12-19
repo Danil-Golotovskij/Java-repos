@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 class Patient extends PersonPolyclinic {
     Scanner in = new Scanner(System.in);
-    private int numberPatient; // номер пациента
-    private int numberDoctor;  // номер доктора
-    private String diagnosis;  // диагноз
-    private String[] weak=new String[20]; // массив болезней пациента
-    private String[][] analisi=new String[3][2];  // анализы: 0-вич, 1-гепатит В, 2-гепатит С
+    protected int numberPatient; // номер пациента
+    protected int numberDoctor;  // номер доктора
+    protected String diagnosis;  // диагноз
+    protected String[] weak=new String[20]; // массив болезней пациента
+    protected String[][] analisi=new String[3][2];  // анализы: 0-вич, 1-гепатит В, 2-гепатит С
     // в 2 элементе прописывается "пол" - положительный тест или "отр" - отрицательный или "-" - нет результата
 
 

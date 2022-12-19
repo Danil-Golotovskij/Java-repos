@@ -2,10 +2,10 @@ package com.company;
 import java.util.Scanner;
 
 class MedicalStaff extends Worker {
-    private String education; // образование
-    private boolean student; // является студентом
+    protected String education; // образование
+    protected boolean student; // является студентом
 
-    public boolean proverk = true; // занесен ли в счетчик
+    protected boolean proverk = true; // занесен ли в счетчик
 
 
     public MedicalStaff(){

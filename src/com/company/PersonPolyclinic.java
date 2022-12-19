@@ -2,11 +2,11 @@ package com.company;
 import java.util.Scanner;
 
 
-abstract class PersonPolyclinic {
+abstract class PersonPolyclinic implements InterfacePerson  {
     Scanner in = new Scanner(System.in);
-    private String fio; // ФИО
-    private int age; // возраст
-    private String pol; // пол
+    protected String fio; // ФИО
+    protected int age; // возраст
+    protected String pol; // пол
 
     public PersonPolyclinic() {
         fio = "-";

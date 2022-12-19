@@ -1,13 +1,16 @@
 package com.company;
 import java.util.Scanner;
 
-abstract class Worker extends PersonPolyclinic {
-    private int numberWorker; // номер работника
-    private int salary; // зарплата
-    private int workExperience; // стаж
+class Worker extends PersonPolyclinic implements Cloneable{
+    protected int numberWorker; // номер работника
+    protected int salary; // зарплата
+    protected int workExperience; // стаж
+    protected Worker worker;
 
 
     public static int counter=0;   // кол-во работников в больнице
+
+
     public static void Counter(boolean proverk){ // метод занесения в счетчик
         if (proverk == true) {
             counter++;
@@ -25,8 +28,8 @@ abstract class Worker extends PersonPolyclinic {
         SetPol("-");
         SetAge(0);
         numberWorker = 0;
-        salary = 0;
-        workExperience = 0;
+        salary = 1000;
+        workExperience = 2;
     }
 
     public Worker(int numberWorker) {
@@ -44,6 +47,44 @@ abstract class Worker extends PersonPolyclinic {
         this.salary = salary;
         this.workExperience = workExperience;
     }
+
+    //-----------------------------------------------------------------------------------------------------------------
+
+
+    public Worker clone() throws CloneNotSupportedException {
+        return (Worker) super.clone();
+    }
+
+
+    //-----------------------------------------------------------------------------------------------------------------
+
+    void ChangeWorker() {       // метод для перегрузки
+        System.out.print("Введите номер работника: ");
+        numberWorker = in.nextInt();
+    }
+
+    public void Read(){
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите ФИО: ");
+        String fio = in.nextLine();
+        SetFio(fio);
+        System.out.print("Введите пол: ");
+        String pol = in.nextLine();
+        SetPol(pol);
+        System.out.print("Введите возраст: ");
+        SetAge(in.nextInt());
+        System.out.print("Введите номер работника: ");
+        SetNumberWorker(in.nextInt());
+        System.out.print("Введите зарплату: ");
+        SetSalary(in.nextInt());
+        System.out.print("Введите стаж: ");
+        SetWorkExperience(in.nextInt());
+
+    }
+
+    //-----------------------------------------------------------------------------------------------------------------
+
+
 
     //-----------------------------------------------------------------------------------------------------------------
 
